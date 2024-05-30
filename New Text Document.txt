@@ -1,0 +1,21 @@
+import  {marked } from "marked";
+import dompurify from "dompurify";
+
+
+interface Previewprops{
+    markdown: string;
+
+}
+
+export default function Preview({markdown}:Previewprops){
+    const parsed = dompurify.sanitize(marked.parse(markdown));
+    return (
+    <div>
+    <div className="w-full bg-gray-900 p-3 text-gray-400 uppercase tracking-wider">
+        Preview
+    </div>
+    </div>
+
+    )
+    
+}
