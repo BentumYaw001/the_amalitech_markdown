@@ -43,8 +43,14 @@ export default function Preview({ markdown }: PreviewProps) {
 
   return (
     <div>
-      <div className="w-full bg-gray-900 p-3 text-gray-400 uppercase tracking-wider">
+      <div className="w-full bg-gray-900 p-3 text-gray-400 uppercase tracking-wider flex flex-row justify-between">
         Preview
+        <button>
+          <img
+            src="/src/assets/icon-show-preview.svg"
+            className="h-4 justify-center"
+          />
+        </button>
       </div>
       <div
         className="p-6 prose prose-invert prose-a:text-blue-500 max-h-fit"

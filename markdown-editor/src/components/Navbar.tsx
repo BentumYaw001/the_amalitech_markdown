@@ -1,28 +1,47 @@
 export const Navbar = () => {
   return (
     <>
-      <nav className="bg-gray-800 p-2 flex items-center justify-between">
-        <div className="flex items-center ">
+      <nav className="bg-gray-800 p-1 flex items-center justify-between">
+        <div className="flex items-center">
           <div className="flex justify-center font-semibold px-2 text-white">
-            <img src="\src\assets\icon-menu.svg" className="px-4" />
-            MARKDOWN |
+            <button>
+              <img
+                src="/src/assets/icon-menu.svg"
+                className="px-3"
+                alt="Menu Icon"
+              />
+            </button>
+            MARKDOWN
           </div>
-          <div className="flex-row flex justify-center ml-10">
-            <img src="\src\assets\icon-document.svg" />
-            <div className=" text-gray-400 text-lg font-semibold  items-center ml-4 flex-col justify-center">
+          <span className="border-l border-white mx-4 h-10" />
+
+          <div className="flex flex-row justify-center ml-5">
+            <img
+              src="/src/assets/icon-document.svg"
+              alt="Document Icon"
+              className="h-8 w-5 my-auto"
+            />
+            <div className="text-gray-400 text-lg font-semibold items-center ml-5 flex-col justify-center">
               <p>Document Name</p>
-              <p>welcome.md</p>
+              <p className="text-white">welcome.md</p>
             </div>
           </div>
-          <span className=" flex flex-row">
-            <p>
-              <img src="\src\assets\icon-delete.svg" />
+        </div>
+        <div className="flex flex-row items-center">
+          <button>
+            <p className="mr-2">
+              <img src="/src/assets/icon-delete.svg" alt="Delete Icon" />
             </p>
-            <button className="ml-3 border-r-0 justify-between text-justify text-white flex flex-row">
-              <img src="\src\assets\icon-save.svg" />
-              Save Changes
-            </button>
-          </span>
+          </button>
+
+          <button className="ml-2 items-center text-white flex flex-row bg-customRed p-2 rounded-sm mr-4">
+            <img
+              src="/src/assets/icon-save.svg"
+              className="mr-2"
+              alt="Save Icon"
+            />
+            Save Changes
+          </button>
         </div>
       </nav>
     </>
