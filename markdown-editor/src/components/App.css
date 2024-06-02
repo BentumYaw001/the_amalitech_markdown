@@ -1,0 +1,142 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-theme {
+    background-color: white;
+    color: black;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+}
+
+.sidebar h2, .sidebar p {
+    padding: 10px 15px;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar .action-btn, .sidebar .theme-btn {
+    display: block;
+    margin: 10px 15px;
+    padding: 10px;
+    background-color: #444;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: calc(100% - 30px);
+    text-align: left;
+}
+
+.sidebar .action-btn:hover, .sidebar .theme-btn:hover {
+    background-color: #555;
+}
+
+.sidebar .theme-btn {
+    position: absolute;
+    margin-top: 400px;
+    bottom: 20px;
+
+}
+
+#docList {
+    padding: 10px 15px;
+}
+
+#docList p {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.main-content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+.open-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px 15px;
+}
+
+.open-btn:hover {
+    color: #444;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.navbar .action-btn {
+    margin-left: 10px;
+}
+
+#docTitle {
+    font-size: 24px;
+}
+
+#docContent {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+.bottom-content {
+    position: fixed;
+    bottom: 0; top: -90%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #111; 
+    z-index: 999; 
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 90vh; 
+    left: 85%; 
+    transform: translateX(-50%); 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+#themeToggleIcon {
+    color: white; 
+    font-size: 24px;
+    cursor: pointer;
+}

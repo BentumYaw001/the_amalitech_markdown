@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { marked } from "marked";
 import dompurify from "dompurify";
+import "./App.css";
 // import hljs from 'highlight.js';
 import "highlight.js/styles/default.css";
 import "highlight.js/styles/tokyo-night-dark.css";
@@ -48,12 +49,13 @@ export default function Preview({ markdown }: PreviewProps) {
         <button>
           <img
             src="/src/assets/icon-show-preview.svg"
-            className="h-4 justify-center"
+            className="h-4 justify-cente hover:bg-customredhover"
           />
         </button>
       </div>
       <div
-        className="p-6 prose prose-invert prose-a:text-blue-500 max-h-fit"
+        id="docContent"
+        className="p-6 prose prose-invert prose-a:text-blue-500 "
         dangerouslySetInnerHTML={{ __html: parsed }}
       />
     </div>

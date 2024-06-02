@@ -1,3 +1,5 @@
+import "./App.css";
+
 interface Editorprops {
   markdown: string;
   setMarkdown: (markdown: string) => void;
@@ -11,12 +13,13 @@ export default function Editor({ markdown, setMarkdown }: Editorprops) {
         <button>
           <img
             src="/src/assets/icon-hide-preview.svg"
-            className="h-4 justify-center"
+            className="h-4 justify-center hover:bg-customredhover"
           />
         </button>
       </div>
       <textarea
-        className="w-full h-sreen bg-gray-800 outline-none p-6 "
+        id="#docContent"
+        className="w-full bg-gray-800 outline-none p-6 "
         onChange={(e) => setMarkdown(e.target.value)}
       >
         {markdown}

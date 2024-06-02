@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         customRed: '#E46643',
+        customredhover:'#F39765',
       },
     },
   },

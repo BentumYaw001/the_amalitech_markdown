@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 export const Navbar = () => {
   const [documentName, setDocumentName] = useState("welcome.md");
   const [isEditing, setIsEditing] = useState(false);
   const [tempName, setTempName] = useState(documentName);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: {
+    target: { value: SetStateAction<string> };
+  }) => {
     setTempName(e.target.value);
   };
 
@@ -22,18 +24,18 @@ export const Navbar = () => {
       <nav className="bg-gray-800 p-1 flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex justify-center font-semibold px-2 text-white">
-            <button id="OpenSideBar">
+            <button id="openBtn">
               <img
                 src="/src/assets/icon-menu.svg"
                 className="px-3"
                 alt="Menu Icon"
               />
             </button>
-            <button id="CloseSideBar">
+            <button id="closeBtn">
               <img
                 src="/src/assets/icon-close.svg"
                 className="px-3"
-                alt="Menu Icon"
+                alt="Close Icon"
               />
             </button>
             MARKDOWN
@@ -71,13 +73,16 @@ export const Navbar = () => {
           </div>
         </div>
         <div className="flex flex-row items-center">
-          <button>
+          <button id="deleteDocBtn">
             <p className="mr-2">
               <img src="/src/assets/icon-delete.svg" alt="Delete Icon" />
             </p>
           </button>
 
-          <button className="ml-2 items-center text-white flex flex-row bg-customRed p-2 rounded-sm mr-4">
+          <button
+            id="saveDocBtn"
+            className="ml-2 items-center text-white flex flex-row bg-customRed p-2 rounded-sm mr-4"
+          >
             <img
               src="/src/assets/icon-save.svg"
               className="mr-2"
