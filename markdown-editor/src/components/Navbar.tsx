@@ -1,4 +1,21 @@
+import React, { useState } from "react";
+
 export const Navbar = () => {
+  const [documentName, setDocumentName] = useState("welcome.md");
+  const [isEditing, setIsEditing] = useState(false);
+  const [tempName, setTempName] = useState(documentName);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTempName(e.target.value);
+  };
+
+  const handleSave = () => {
+    // Append ".md" as an extension
+    const newName = tempName + ".md";
+    setDocumentName(newName);
+    setIsEditing(false);
+  };
+
   return (
     <>
       <nav className="bg-gray-800 p-1 flex items-center justify-between">
@@ -23,7 +40,25 @@ export const Navbar = () => {
             />
             <div className="text-gray-400 text-lg font-semibold items-center ml-5 flex-col justify-center">
               <p>Document Name</p>
-              <p className="text-white">welcome.md</p>
+              {isEditing ? (
+                <div className="flex items-center">
+                  <input
+                    type="text"
+                    value={tempName}
+                    onChange={handleInputChange}
+                    onBlur={handleSave}
+                    autoFocus
+                    className="bg-transparent text-white focus:outline-none  focus:border-b border-white caret-customRed"
+                  />
+                </div>
+              ) : (
+                <p
+                  className="text-white cursor-pointer"
+                  onClick={() => setIsEditing(true)}
+                >
+                  {documentName}
+                </p>
+              )}
             </div>
           </div>
         </div>
