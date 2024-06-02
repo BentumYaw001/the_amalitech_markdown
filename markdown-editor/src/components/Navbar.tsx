@@ -10,10 +10,11 @@ export const Navbar = () => {
   };
 
   const handleSave = () => {
-    // Append ".md" as an extension
-    const newName = tempName + ".md";
-    setDocumentName(newName);
-    setIsEditing(false);
+    if (!tempName.endsWith(".md")) {
+      const newName = tempName + ".md";
+      setDocumentName(newName);
+      setIsEditing(false);
+    }
   };
 
   return (
@@ -21,9 +22,16 @@ export const Navbar = () => {
       <nav className="bg-gray-800 p-1 flex items-center justify-between">
         <div className="flex items-center">
           <div className="flex justify-center font-semibold px-2 text-white">
-            <button>
+            <button id="OpenSideBar">
               <img
                 src="/src/assets/icon-menu.svg"
+                className="px-3"
+                alt="Menu Icon"
+              />
+            </button>
+            <button id="CloseSideBar">
+              <img
+                src="/src/assets/icon-close.svg"
                 className="px-3"
                 alt="Menu Icon"
               />
